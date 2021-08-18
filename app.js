@@ -1,7 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
+require('dotenv').config();//cargamos las variables de entorno .env
 const app = express()
-const port=8080;
+const port=process.env.PORT;
 
 
 //Handlebars
