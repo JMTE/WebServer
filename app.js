@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const port=8080;
 
+
+//Crear carpeta views
+
+app.set('view engine', 'hbs');
+
 //Servir contenido estatico
 
 app.use(express.static('public'))
@@ -15,6 +20,11 @@ app.use(express.static('public'))
 //   app.get('*', function (req, res) {
 //     res.sendFile(__dirname+'/public/404.html')  //El dirname nos construye el path de donde se encuentra la app
 //   })
+   
+app.get('/', function (req, res) {
+  res.render('home');
+})
+
 
   app.get('/generic', function (req, res) {
     res.sendFile(__dirname+'/public/generic.html')
